@@ -1,26 +1,45 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Brand colors sampled from the Licensing Force logo */
+  --color-navy-950: #000f1f;
+  --color-navy-900: #00172e;
+  --color-navy-800: #0a2540;
+  --color-navy-700: #14365a;
+  --color-brand-50: #eef7ff;
+  --color-brand-100: #d9eeff;
+  --color-brand-200: #b3dcff;
+  --color-brand-400: #3fb2ff;
+  --color-brand-500: #0a9bff;
+  --color-brand-600: #0077d9;
+  --color-brand-700: #0b5fb8;
+  --color-brand-800: #0b3d91;
+  --color-ink: #0f1b2b;
+  --color-muted: #52627a;
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-poppins);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--color-ink);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-brand-800), var(--color-brand-500));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
